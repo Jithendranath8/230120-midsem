@@ -1,0 +1,103 @@
+{
+  "student_metadata": {
+    "name": "Akula Jithendranath",
+    "roll_number": "230120",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B - Task 4.1",
+    "submission_date": "2026-03-12"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "provider": "OpenAI"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "task_tag": "Task 4.1",
+      "date": "2026-03-11",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Report structure planning",
+      "prompt": "what sections should a paper reproduction report have? its for my ML midsem. thinking method, experiments, results but not sure about the order",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Overview, method, experimental setup, results, comparison with paper, limitations, reproducibility checklist. Can loosely follow the original paper.",
+      "student_verification": "Compared with example reproduction reports from ML courses online — similar structure.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "task_tag": "Task 4.1",
+      "date": "2026-03-11",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Framing result differences",
+      "prompt": "my results are different from the paper's (different dataset, smaller). how do I write the comparison without it sounding like I failed the reproduction?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Focus on qualitative trends not exact numbers. 'Trends match' not 'numbers match'. List dataset size and R grid as reasons for the gap.",
+      "student_verification": "Re-read the paper's own discussion — they also note performance variation across datasets.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 3,
+      "task_tag": "Task 4.1",
+      "date": "2026-03-11",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Writing style advice",
+      "prompt": "need a good transition from results to discussion. something like 'despite these differences' but less generic",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Suggested: 'Despite these quantitative gaps, the qualitative trends align with...' — used a variation of this.",
+      "student_verification": "Read a few IEEE papers to see how they transition — mine fits the academic writing style.",
+      "confidence_level": 3
+    },
+    {
+      "interaction_id": 4,
+      "task_tag": "Task 4.1",
+      "date": "2026-03-11",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "First vs third person choice",
+      "prompt": "should I use 'we' or 'I' in the report? its just me but academic papers usually say 'we'",
+      "llm_response_used": "Partially",
+      "how_it_helped": "'I' is fine for solo student work. 'We' is convention but 'I' feels more honest. Went with a mix but mostly 'I'.",
+      "student_verification": "Checked course guidelines — no specific requirement on first/third person.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "what sections should a paper reproduction report have? its for my ML midsem. thinking method, experiments, results but not sure about the order",
+      "why_important": "Decided the overall structure of my report."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 2,
+      "prompt": "my results are different from the paper's (different dataset, smaller). how do I write the comparison without it sounding like I failed the reproduction?",
+      "why_important": "Helped me frame the discussion section constructively."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 3,
+      "prompt": "need a good transition from results to discussion. something like 'despite these differences' but less generic",
+      "why_important": "Used one of the suggestions for flow between sections."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 4,
+      "prompt": "should I use 'we' or 'I' in the report? its just me but academic papers usually say 'we'",
+      "why_important": "Went with 'I' based on this — felt more honest for a student report."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 4.1.",
+    "understanding_acknowledged": true,
+    "signature": "Akula Jithendranath",
+    "date": "2026-03-11"
+  }
+}

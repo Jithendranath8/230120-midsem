@@ -1,0 +1,122 @@
+{
+  "student_metadata": {
+    "name": "Akula Jithendranath",
+    "roll_number": "230120",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B - Task 4.2",
+    "submission_date": "2026-03-12"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "provider": "OpenAI"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "task_tag": "Task 4.2",
+      "date": "2026-03-11",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "LLM disclosure file structure",
+      "prompt": "what should go in an LLM disclosure file for a uni assignment? we need to log all AI usage",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Each interaction: what I asked, response summary, whether code was used, modifications. Plus declaration and verification at the end.",
+      "student_verification": "Checked the assignment rubric for required fields — matches what was suggested.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "task_tag": "Task 4.2",
+      "date": "2026-03-11",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "JSON schema design",
+      "prompt": "what json structure should I use? thinking task_tag, interactions array with prompt and response_summary fields. anything else I should include?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Add interaction_id, code_used_verbatim, student_modification, top_prompts list, declaration strings. Keep it parseable.",
+      "student_verification": "Made sure the schema covers all rubric requirements for LLM disclosure.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 3,
+      "task_tag": "Task 4.2",
+      "date": "2026-03-11",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Classifying code usage",
+      "prompt": "if I took code from chatgpt but changed the variable names and added some extra lines, does that count as verbatim? like where do you draw the line",
+      "llm_response_used": "Partially",
+      "how_it_helped": "If core logic came from LLM, mark as used and describe changes. Better to be honest than risk getting caught understating usage.",
+      "student_verification": "Applied this principle consistently across all disclosure files.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 4,
+      "task_tag": "Task 4.2",
+      "date": "2026-03-11",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Declaration wording",
+      "prompt": "whats a good declaration statement? something formal but not overkill for a student assignment",
+      "llm_response_used": "Partially",
+      "how_it_helped": "'I declare that all use of LLM tools has been fully and accurately disclosed in this file.' Short and clear.",
+      "student_verification": "Used this wording consistently across all 10 disclosure files.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 5,
+      "task_tag": "Task 4.2",
+      "date": "2026-03-11",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "File naming convention",
+      "prompt": "should I name the files llm_task_1_1.json, llm_task_2_2.json etc? or is there a better convention",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Confirmed the naming matches task numbering and is easy to navigate.",
+      "student_verification": "Naming aligns with the notebook naming convention (task_X_Y.ipynb -> llm_task_X_Y.json).",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "what should go in an LLM disclosure file for a uni assignment? we need to log all AI usage",
+      "why_important": "Set up the whole structure of these disclosure files."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 2,
+      "prompt": "what json structure should I use? thinking task_tag, interactions array with prompt and response_summary fields. anything else I should include?",
+      "why_important": "Defined the JSON schema I used for all 10 files."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 3,
+      "prompt": "if I took code from chatgpt but changed the variable names and added some extra lines, does that count as verbatim? like where do you draw the line",
+      "why_important": "Important for being honest about code usage."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 4,
+      "prompt": "whats a good declaration statement? something formal but not overkill for a student assignment",
+      "why_important": "Used the suggested declaration wording."
+    },
+    {
+      "rank": 5,
+      "interaction_id": 5,
+      "prompt": "should I name the files llm_task_1_1.json, llm_task_2_2.json etc? or is there a better convention",
+      "why_important": "Confirmed the file naming convention."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 4.2.",
+    "understanding_acknowledged": true,
+    "signature": "Akula Jithendranath",
+    "date": "2026-03-11"
+  }
+}
