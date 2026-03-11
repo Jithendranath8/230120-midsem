@@ -1,0 +1,103 @@
+{
+  "student_metadata": {
+    "name": "Akula Jithendranath",
+    "roll_number": "230120",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B - Task 1.1",
+    "submission_date": "2026-03-12"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "provider": "OpenAI"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "task_tag": "Task 1.1",
+      "date": "2026-03-07",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Understanding the conservative update mechanism",
+      "prompt": "hey so im reading this AAAI 2012 paper on sparse kernel logistic regression and im confused about how the conservative update thing works. like when does it decide to skip vs not skip??",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It explained the Bernoulli sampling — basically before each gradient step the algorithm calculates a probability p_t based on how confident the classifier already is on that example. Helped me understand the core gating mechanism.",
+      "student_verification": "Verified by reading Algorithm 2 and Algorithm 3 step-by-step in the paper, cross-checked with Eq. 5 and Eq. 6.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "task_tag": "Task 1.1",
+      "date": "2026-03-07",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Differentiating the three algorithms",
+      "prompt": "ok wait so theres 3 algorithms in this paper right — NC, Margin and Auxiliary. whats the actual difference between them? I need to write a step-by-step breakdown",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Clarified that NC updates every example (dense), Margin adds Bernoulli gate tied to eta, and Auxiliary decouples sparsity from eta via h(z). Helped structure my step-by-step description.",
+      "student_verification": "Read through all three algorithm boxes in the paper and confirmed the differences match.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 3,
+      "task_tag": "Task 1.1",
+      "date": "2026-03-07",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Understanding the projection step",
+      "prompt": "why do they use the constrained formulation (||f|| <= R) instead of the usual regularized version? and what exactly does the projection step do",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Constraining the norm makes projection simple (just rescale) and decouples regularization from step size. The projection step was confusing me before this.",
+      "student_verification": "Checked Algorithm 1 line 7 and the definition of pi_Omega in the paper.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 4,
+      "task_tag": "Task 1.1",
+      "date": "2026-03-07",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Output step clarification",
+      "prompt": "for the final output do they just use the last f_T or do they average somehow?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "They average all T intermediate classifiers — standard online-to-batch trick for the O(1/sqrt(T)) rate.",
+      "student_verification": "Confirmed in Algorithm 1 line 9, Algorithm 2 line 15, Algorithm 3 line 15.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "hey so im reading this AAAI 2012 paper on sparse kernel logistic regression and im confused about how the conservative update thing works. like when does it decide to skip vs not skip??",
+      "why_important": "This was my first question and it helped me understand the core idea of the paper."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 2,
+      "prompt": "ok wait so theres 3 algorithms in this paper right — NC, Margin and Auxiliary. whats the actual difference between them? I need to write a step-by-step breakdown",
+      "why_important": "Needed this to structure my method description properly."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 3,
+      "prompt": "why do they use the constrained formulation (||f|| <= R) instead of the usual regularized version? and what exactly does the projection step do",
+      "why_important": "The projection step was confusing me, this cleared it up."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 4,
+      "prompt": "for the final output do they just use the last f_T or do they average somehow?",
+      "why_important": "Had to get this right for the output step description."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 1.1.",
+    "understanding_acknowledged": true,
+    "signature": "Akula Jithendranath",
+    "date": "2026-03-11"
+  }
+}

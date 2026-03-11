@@ -1,0 +1,84 @@
+{
+  "student_metadata": {
+    "name": "Akula Jithendranath",
+    "roll_number": "230120",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B - Task 1.3",
+    "submission_date": "2026-03-12"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "provider": "OpenAI"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "task_tag": "Task 1.3",
+      "date": "2026-03-07",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Identifying baselines in the paper",
+      "prompt": "what baselines does the paper compare against? trying to write the prior methods part and I keep getting confused between their own NC and the external baselines",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Clarified that NC is their own internal baseline, while PCD/DCD, IVM, and Pegasos are external. NC is the main one for sparsity comparison.",
+      "student_verification": "Confirmed by reading Section 'Experiments' and Table 1 in the paper.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "task_tag": "Task 1.3",
+      "date": "2026-03-07",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Understanding why KLR is dense",
+      "prompt": "why does regular KLR end up being dense? the paper keeps saying every training point is a SV but I dont get why",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Because logistic loss l(z) = ln(1+e^-z) is always > 0 so the gradient is never zero. Every example gets a nonzero weight. Thats the core problem the paper solves.",
+      "student_verification": "Verified by checking the logistic loss function — it's always positive for finite z, confirmed in the paper's introduction.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 3,
+      "task_tag": "Task 1.3",
+      "date": "2026-03-07",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Understanding failure scenarios",
+      "prompt": "are there cases where the conservative algorithms would actually do worse than NC? like not just similar but genuinely worse",
+      "llm_response_used": "Partially",
+      "how_it_helped": "High noise or overlapping classes means p_t stays near 1 so the gate barely skips. You get NC-like behavior but with overhead. The a9a results in the paper hint at this.",
+      "student_verification": "Checked paper's a9a results — indeed lower sparsity improvement compared to mushrooms/ijcnn1.",
+      "confidence_level": 3
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "what baselines does the paper compare against? trying to write the prior methods part and I keep getting confused between their own NC and the external baselines",
+      "why_important": "Needed to correctly identify all baselines for the comparison section."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 2,
+      "prompt": "why does regular KLR end up being dense? the paper keeps saying every training point is a SV but I dont get why",
+      "why_important": "This was key to understanding the motivation of the whole paper."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 3,
+      "prompt": "are there cases where the conservative algorithms would actually do worse than NC? like not just similar but genuinely worse",
+      "why_important": "Helped me think about limitations which I needed for task 1.3."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 1.3.",
+    "understanding_acknowledged": true,
+    "signature": "Akula Jithendranath",
+    "date": "2026-03-11"
+  }
+}

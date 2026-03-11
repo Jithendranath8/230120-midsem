@@ -1,0 +1,84 @@
+{
+  "student_metadata": {
+    "name": "Akula Jithendranath",
+    "roll_number": "230120",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B - Task 1.2",
+    "submission_date": "2026-03-12"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "provider": "OpenAI"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "task_tag": "Task 1.2",
+      "date": "2026-03-07",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Identifying paper-specific assumptions",
+      "prompt": "what are the key assumptions in the sparse KLR paper? not like generic ML assumptions, I mean the ones specific to their method and proofs",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Listed bounded kernel kappa(x,x) <= 1, norm ball assumption, and auxiliary function dominance h(z) >= l(z). Gave me a starting point.",
+      "student_verification": "Read through Theorems 1-4 and the text before each to confirm these are stated explicitly.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "task_tag": "Task 1.2",
+      "date": "2026-03-07",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Understanding kernel bound assumption",
+      "prompt": "for the kappa(x,x) <= 1 assumption — why do they need that? what goes wrong if I use a poly kernel on raw unnormalized features?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "The bound controls gradient magnitude in convergence proofs. With poly kernel on unnormalized data it blows up. Helped me formulate a concrete violation scenario.",
+      "student_verification": "Checked Theorem 1 proof sketch — the kappa(x,x) <= 1 bound appears in bounding the gradient norm.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 3,
+      "task_tag": "Task 1.2",
+      "date": "2026-03-07",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Exploring auxiliary function violation",
+      "prompt": "what breaks if gamma < 1 in h(z) = ln(gamma + e^-z)? like does the sampling probability go > 1?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Confirmed that gamma < 1 makes h(z) < l(z) for large z, so p_t = l/h exceeds 1. Breaks the Bernoulli draw entirely.",
+      "student_verification": "Verified by plugging gamma=0.5 and z=5 into both h(z) and l(z) by hand — h(z) < l(z) confirmed.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "what are the key assumptions in the sparse KLR paper? not like generic ML assumptions, I mean the ones specific to their method and proofs",
+      "why_important": "Starting point for identifying all the assumptions I needed to write about."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 2,
+      "prompt": "for the kappa(x,x) <= 1 assumption — why do they need that? what goes wrong if I use a poly kernel on raw unnormalized features?",
+      "why_important": "Helped me come up with a concrete violation scenario for assumption 1."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 3,
+      "prompt": "what breaks if gamma < 1 in h(z) = ln(gamma + e^-z)? like does the sampling probability go > 1?",
+      "why_important": "Needed for the auxiliary function dominance assumption violation example."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 1.2.",
+    "understanding_acknowledged": true,
+    "signature": "Akula Jithendranath",
+    "date": "2026-03-11"
+  }
+}
