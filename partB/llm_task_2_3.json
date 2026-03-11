@@ -1,0 +1,122 @@
+{
+  "student_metadata": {
+    "name": "Akula Jithendranath",
+    "roll_number": "230120",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B - Task 2.3",
+    "submission_date": "2026-03-12"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "provider": "OpenAI"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "task_tag": "Task 2.3",
+      "date": "2026-03-09",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Result presentation strategy",
+      "prompt": "how should I show the NC vs Auxiliary comparison? bar chart or table or both? paper does figures with accuracy and SV counts",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Suggested both table and bar charts for clarity. Side-by-side bars for accuracy and SV count.",
+      "student_verification": "Looked at how the paper presents results (Figures 1-4, Tables 1-2) and adopted a similar visual style.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "task_tag": "Task 2.3",
+      "date": "2026-03-09",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Bar chart with annotations",
+      "prompt": "matplotlib bar chart with the actual accuracy values printed on top of each bar. two subplots one for acc one for SVs",
+      "llm_response_used": "Yes",
+      "how_it_helped": "axes.bar() with text annotations loop. Changed colors and number format for my plot.",
+      "student_verification": "Plot renders correctly with all values visible and readable.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 3,
+      "task_tag": "Task 2.3",
+      "date": "2026-03-09",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "NC baseline correctness",
+      "prompt": "in the comparison notebook should I run the actual NC function or can I just set gamma=1.0001 in Auxiliary to approximate NC? would be easier",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Use the actual NC — it uses l'(z) not h'(z), so the gamma~1 shortcut changes the gradient direction. Almost made a mistake here.",
+      "student_verification": "Confirmed: at gamma=1, h'(z) = -e^{-z}/(1+e^{-z}) = l'(z), but with gamma=1.0001 there's a small but real difference.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 4,
+      "task_tag": "Task 2.3",
+      "date": "2026-03-09",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Writing honest result discussion",
+      "prompt": "my numbers dont match the paper at all — like 62% sparsity vs their 80%. what do I write in the discussion without sounding like I messed up",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Focus on qualitative trends. Mention dataset size difference (455 vs 8k+) and different R grids as reasons. Frame as 'trends match' not 'numbers match'.",
+      "student_verification": "Re-read paper's discussion of dataset-specific results — they also note variation across datasets.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 5,
+      "task_tag": "Task 2.3",
+      "date": "2026-03-09",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Reproducibility checklist items",
+      "prompt": "whats a reproducibility checklist for an ML paper reproduction supposed to have",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Seeds, pinned dependencies, top-to-bottom execution, automated data loading, documented hyperparameters.",
+      "student_verification": "Cross-checked with ML reproducibility guidelines from NeurIPS checklist format.",
+      "confidence_level": 4
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 3,
+      "prompt": "in the comparison notebook should I run the actual NC function or can I just set gamma=1.0001 in Auxiliary to approximate NC? would be easier",
+      "why_important": "Almost made a mistake here — using gamma~1 would have been technically wrong."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 1,
+      "prompt": "how should I show the NC vs Auxiliary comparison? bar chart or table or both? paper does figures with accuracy and SV counts",
+      "why_important": "Shaped how I structured the comparison section."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 2,
+      "prompt": "matplotlib bar chart with the actual accuracy values printed on top of each bar. two subplots one for acc one for SVs",
+      "why_important": "Used the bar chart code for the comparison plot."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 4,
+      "prompt": "my numbers dont match the paper at all — like 62% sparsity vs their 80%. what do I write in the discussion without sounding like I messed up",
+      "why_important": "Helped me write an honest but constructive discussion of the differences."
+    },
+    {
+      "rank": 5,
+      "interaction_id": 5,
+      "prompt": "whats a reproducibility checklist for an ML paper reproduction supposed to have",
+      "why_important": "Used to build the checklist at the end of the notebook."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 2.3.",
+    "understanding_acknowledged": true,
+    "signature": "Akula Jithendranath",
+    "date": "2026-03-11"
+  }
+}

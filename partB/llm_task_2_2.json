@@ -1,0 +1,135 @@
+{
+  "student_metadata": {
+    "name": "Akula Jithendranath",
+    "roll_number": "230120",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B - Task 2.2",
+    "submission_date": "2026-03-12"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "provider": "OpenAI"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "task_tag": "Task 2.2",
+      "date": "2026-03-08",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Auxiliary function gradient derivation",
+      "prompt": "implementing the Auxiliary algorithm (Alg 3) from the KLR paper. when Zt=1 the update uses h'(z) not l'(z) right? for h(z)=ln(gamma+e^-z) whats the derivative?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Derived h'(z) = -e^{-z}/(gamma + e^{-z}). Had to get this right or the whole algorithm would be wrong.",
+      "student_verification": "Manually differentiated h(z) = ln(gamma + e^{-z}) and confirmed the derivative matches.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 2,
+      "task_tag": "Task 2.2",
+      "date": "2026-03-08",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Vectorizing kernel computation",
+      "prompt": "my kernel computation is really slow rn. im looping over each support vector individually to compute k(x_new, sv_i). is there a vectorized way??",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Use np.sum((X-x)**2, axis=1) or scipy cdist. Wrapped into gaussian_kernel_vector and gaussian_kernel_matrix functions.",
+      "student_verification": "Tested both functions on small arrays — outputs match manual computation.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 3,
+      "task_tag": "Task 2.2",
+      "date": "2026-03-08",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Understanding RKHS norm projection",
+      "prompt": "for the projection onto Omega — do I rescale ALL the alpha values at once? and how do I compute ||f||_H when f is a sum of kernel functions?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "||f||^2 = alpha^T @ K @ alpha where K is the gram matrix. If norm exceeds R, scale all alphas by R/||f||. Simple scalar rescaling.",
+      "student_verification": "Verified by computing norm before and after projection on a toy example — norm correctly clipped to R.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 4,
+      "task_tag": "Task 2.2",
+      "date": "2026-03-09",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Fixing averaged classifier bug",
+      "prompt": "confused about the averaged classifier. do I average the predictions f_t(x) over all t or average the weights? getting weird accuracy numbers",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Average the predictions not the weights. cumulative_test_pred += f_test each step, then /T at end. Fixed a bug in my code.",
+      "student_verification": "After fixing, accuracy matched expected range. Checked paper Algorithm 1 line 9 to confirm.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 5,
+      "task_tag": "Task 2.2",
+      "date": "2026-03-09",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Cross-validation for R selection",
+      "prompt": "paper selects R via 5-fold CV. how do I do cross-validation for R in an online learning setting? feels weird to CV an online algo",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Use sklearn KFold, run the full online algo on 4 folds, evaluate on held-out fold. Made a lighter CV function and saved best_R to data/best_R.npy.",
+      "student_verification": "Ran CV and got R=20 as best. Checked that eta = 20/sqrt(455) = 0.94 < 2 as required by Theorem 3.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 6,
+      "task_tag": "Task 2.2",
+      "date": "2026-03-09",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Plotting accuracy vs SVs",
+      "prompt": "plot accuracy vs number of SVs like figure 3 in the paper. multiple lines for different gamma values on same axes",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Suggested sv_history on x-axis, acc_history on y-axis with one line per gamma. Used this structure for the plot.",
+      "student_verification": "Plot qualitatively matches Figure 3 in the paper — higher gamma curves reach same accuracy with fewer SVs.",
+      "confidence_level": 4
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "implementing the Auxiliary algorithm (Alg 3) from the KLR paper. when Zt=1 the update uses h'(z) not l'(z) right? for h(z)=ln(gamma+e^-z) whats the derivative?",
+      "why_important": "Had to get this gradient right or the whole algorithm would be wrong."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 5,
+      "prompt": "paper selects R via 5-fold CV. how do I do cross-validation for R in an online learning setting? feels weird to CV an online algo",
+      "why_important": "Tricky part — making sure CV doesnt leak test data."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 2,
+      "prompt": "my kernel computation is really slow rn. im looping over each support vector individually to compute k(x_new, sv_i). is there a vectorized way??",
+      "why_important": "Used the code suggestion to speed things up a lot."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 3,
+      "prompt": "for the projection onto Omega — do I rescale ALL the alpha values at once? and how do I compute ||f||_H when f is a sum of kernel functions?",
+      "why_important": "Needed to understand the projection step correctly."
+    },
+    {
+      "rank": 5,
+      "interaction_id": 4,
+      "prompt": "confused about the averaged classifier. do I average the predictions f_t(x) over all t or average the weights? getting weird accuracy numbers",
+      "why_important": "Fixed a bug in my code — was averaging weights instead of predictions."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 2.2.",
+    "understanding_acknowledged": true,
+    "signature": "Akula Jithendranath",
+    "date": "2026-03-11"
+  }
+}

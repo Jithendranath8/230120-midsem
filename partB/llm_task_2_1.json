@@ -1,0 +1,103 @@
+{
+  "student_metadata": {
+    "name": "Akula Jithendranath",
+    "roll_number": "230120",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B - Task 2.1",
+    "submission_date": "2026-03-12"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "provider": "OpenAI"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "task_tag": "Task 2.1",
+      "date": "2026-03-08",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Dataset selection for reproduction",
+      "prompt": "the paper uses mushrooms, a9a, ijcnn1 etc which are all massive datasets. I need something smaller from sklearn for my reproduction. whats a good binary classification dataset that works well with gaussian kernels?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Suggested Breast Cancer Wisconsin as a good fit — 569 samples, 30 features, binary, commonly used with kernel methods.",
+      "student_verification": "Loaded the dataset in sklearn and confirmed it's suitable — binary labels, reasonable feature count, well-studied.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "task_tag": "Task 2.1",
+      "date": "2026-03-08",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Kernel width computation",
+      "prompt": "how do I pick sigma for the gaussian kernel? paper says 5th percentile of pairwise distances. can you give me the numpy/scipy code for that",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Gave me pdist + np.percentile code. Put it into my preprocessing cell with renamed variables.",
+      "student_verification": "Ran the code and checked sigma value was reasonable (~2.98 for Breast Cancer). Matched paper's methodology.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 3,
+      "task_tag": "Task 2.1",
+      "date": "2026-03-08",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Label conversion and data splitting",
+      "prompt": "sklearn breast cancer labels are 0 and 1 but the paper needs {-1, +1}. how do I convert? also need 80/20 stratified split",
+      "llm_response_used": "Yes",
+      "how_it_helped": "y = 2*y_raw - 1 for conversion, train_test_split with stratification. Used this exact logic with my RANDOM_SEED variable.",
+      "student_verification": "Verified label distribution after conversion — balanced classes confirmed.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 4,
+      "task_tag": "Task 2.1",
+      "date": "2026-03-08",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Dataset visualization",
+      "prompt": "need a quick matplotlib plot — histogram of pairwise distances showing where sigma falls, and class distribution bar chart. side by side subplots",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Gave plt.subplots(1,2) code. Changed sigma line to red dashed and added savefig.",
+      "student_verification": "Plot looks correct — sigma at 5th percentile clearly visible, class distribution is balanced.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "the paper uses mushrooms, a9a, ijcnn1 etc which are all massive datasets. I need something smaller from sklearn for my reproduction. whats a good binary classification dataset that works well with gaussian kernels?",
+      "why_important": "This decided which dataset I used for the whole project."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 2,
+      "prompt": "how do I pick sigma for the gaussian kernel? paper says 5th percentile of pairwise distances. can you give me the numpy/scipy code for that",
+      "why_important": "Important preprocessing step from the paper, used the code with minor changes."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 3,
+      "prompt": "sklearn breast cancer labels are 0 and 1 but the paper needs {-1, +1}. how do I convert? also need 80/20 stratified split",
+      "why_important": "Basic setup but needed to get it right for reproducibility."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 4,
+      "prompt": "need a quick matplotlib plot — histogram of pairwise distances showing where sigma falls, and class distribution bar chart. side by side subplots",
+      "why_important": "Used for the dataset overview figure."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 2.1.",
+    "understanding_acknowledged": true,
+    "signature": "Akula Jithendranath",
+    "date": "2026-03-11"
+  }
+}
