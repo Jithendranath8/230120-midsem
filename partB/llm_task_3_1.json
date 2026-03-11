@@ -1,0 +1,103 @@
+{
+  "student_metadata": {
+    "name": "Akula Jithendranath",
+    "roll_number": "230120",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B - Task 3.1",
+    "submission_date": "2026-03-12"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "provider": "OpenAI"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "task_tag": "Task 3.1",
+      "date": "2026-03-10",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Choosing ablation components",
+      "prompt": "for the ablation study which parts of the algorithm should I ablate? theres the bernoulli gate, the projection, the auxiliary function choice... which ones make sense",
+      "llm_response_used": "Partially",
+      "how_it_helped": "The two clearest are: Bernoulli gate (turns it into NC) and projection (lets norm grow). These have clear theoretical roles.",
+      "student_verification": "Confirmed by looking at the algorithm structure — these are the two independent toggleable components.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "task_tag": "Task 3.1",
+      "date": "2026-03-10",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Unified ablation function design",
+      "prompt": "I want a single run_klr function with boolean flags for use_conservative and use_projection so I can toggle them independently. when use_conservative=False it should just update every step like NC. can you sketch the logic?",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Outlined the toggle structure: if use_conservative compute p_t and Bernoulli, use h' gradient; else use l' gradient and always update. Implemented full function based on this.",
+      "student_verification": "Tested all 4 combinations of flags on a small dataset — behavior matches expectations.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 3,
+      "task_tag": "Task 3.1",
+      "date": "2026-03-10",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Debugging ablation 2 (zero effect)",
+      "prompt": "ablation 2 isnt working — removing projection shows literally zero difference whether I use R=20 or R=1. I think the norm never actually exceeds R because eta scales with R too. how do I make projection actually matter?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "eta = R/sqrt(T) means smaller R gives smaller eta so norm growth is proportional to R. Fix: decouple eta from R — keep the main eta but use tight R=2. This was a real debugging moment.",
+      "student_verification": "Printed the RKHS norm during training — confirmed it exceeds R=2 within the first ~10 updates when eta=0.94.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 4,
+      "task_tag": "Task 3.1",
+      "date": "2026-03-10",
+      "tool_name": "ChatGPT",
+      "model": "GPT-5.2",
+      "purpose": "Ablation visualization",
+      "prompt": "bar chart comparing full model vs no-bernoulli vs no-projection — two subplots for accuracy and SV count",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Standard plt.subplots(1,2) with bars and text annotations. Made two separate figures since they use different R values.",
+      "student_verification": "Both plots render correctly, values match printed output.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "for the ablation study which parts of the algorithm should I ablate? theres the bernoulli gate, the projection, the auxiliary function choice... which ones make sense",
+      "why_important": "Decided what the two ablations would be."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 2,
+      "prompt": "I want a single run_klr function with boolean flags for use_conservative and use_projection so I can toggle them independently. when use_conservative=False it should just update every step like NC. can you sketch the logic?",
+      "why_important": "Core implementation structure — used and extended the suggested logic."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 3,
+      "prompt": "ablation 2 isnt working — removing projection shows literally zero difference whether I use R=20 or R=1. I think the norm never actually exceeds R because eta scales with R too. how do I make projection actually matter?",
+      "why_important": "This was a real debugging moment — without this insight the second ablation would have been useless."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 4,
+      "prompt": "bar chart comparing full model vs no-bernoulli vs no-projection — two subplots for accuracy and SV count",
+      "why_important": "Used the chart format for ablation visualizations."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 3.1.",
+    "understanding_acknowledged": true,
+    "signature": "Akula Jithendranath",
+    "date": "2026-03-11"
+  }
+}
